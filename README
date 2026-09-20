@@ -1,0 +1,30 @@
+# Assignment #2 — Factory Method & Abstract Factory
+
+**Topic:** Logistics and Cargo Delivery
+
+------------------
+
+## Project Overview
+
+This project demonstrates two creational design patterns applied to a logistics and cargo delivery domain:
+1. **Part A: Factory Method** — Used for creating individual transport types (`Truck`, `Ship`) based on the delivery route.
+2. **Part B: Abstract Factory** — Used for creating a consistent family of related delivery objects (`Vehicle` + `Driver`) for different platforms (`Land` vs `Sea`).
+
+---
+
+### Part A: Factory Method
+* **Product:** `Transport` (Interface defining `deliver()`)
+* **Concrete Products:** `Truck`, `Ship`
+* **Creator:** `Logistics` (Abstract class with `createTransport()` method)
+* **Concrete Creators:** `RoadLogistics`, `SeaLogistics`
+
+### Part B: Abstract Factory
+* **Abstract Products:** `Vehicle`, `Driver`
+* **Concrete Product Families:**
+  * **Land:** `TruckVehicle`, `TruckDriver`
+  * **Sea:** `CargoShip`, `ShipCaptain`
+* **Abstract Factory:** `DeliveryFactory`
+* **Concrete Factories:** `LandDeliveryFactory`, `SeaDeliveryFactory`
+* **Client:** `DeliveryClient` (Interacts strictly via factory & product interfaces)
+
+---
